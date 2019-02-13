@@ -1,0 +1,70 @@
+body {
+  margin-top: 32px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  line-height: 60px;
+}
+
+.woocommerce {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.woocommerce .product {
+  display: flex;
+}
+
+.woocommerce .onsale {
+  position: absolute;
+}
+
+.woocommerce-tabs {
+  display: none;
+}
+
+.woocommerce-product-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.woocommerce .summary .entry-title {
+  position: relative;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+}
+
+.woocommerce .summary .entry-title:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: #cab1a1;
+}
+
+.woocommerce .summary .price > del {
+  font-size: 20px;
+  color: #fe347f;
+}
+
+.woocommerce .summary .price > ins {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  .woocommerce-product-gallery {
+    width: 40%;
+  }
+  .woocommerce .summary {
+    width: 60%;
+  }
+}
