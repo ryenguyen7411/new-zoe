@@ -23,7 +23,8 @@ header {
   position: absolute;
 }
 
-.woocommerce-tabs {
+.woocommerce-tabs,
+.woocommerce .product_meta {
   display: none;
 }
 
@@ -45,6 +46,7 @@ header {
   position: absolute;
   bottom: 0;
   left: 0;
+  margin: 0;
   width: 80px;
   height: 3px;
   background: #cab1a1;
@@ -58,13 +60,85 @@ header {
 .woocommerce .summary .price > ins {
   font-size: 30px;
   text-decoration: none;
+  background: none;
 }
 
 @media (min-width: 992px) {
   .woocommerce-product-gallery {
     width: 40%;
+    padding-right: 64px;
   }
   .woocommerce .summary {
     width: 60%;
   }
+}
+
+.woocommerce table.variations {
+  margin: 0;
+  width: 200px;
+}
+
+.woocommerce table.variations tr {
+  display: flex;
+  flex-direction: column;
+}
+
+.woocommerce table.variations select#color {
+  padding-left: 16px;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+}
+
+.woocommerce table.variations .reset_variations {
+  display: none;
+}
+
+.woocommerce table.variations td, .woocommerce table.variations th {
+  padding: 0;
+  border: none;
+}
+
+.woocommerce table.variations label {
+  line-height: 40px;
+  font-size: 18px;
+}
+
+.woocommerce .single_variation_wrap {
+  position: relative;
+  padding: 32px 0;
+}
+
+.woocommerce .single_variation_wrap .woocommerce-variation-add-to-cart {
+  margin-top: 16px;
+}
+
+.woocommerce .single_variation_wrap .woocommerce-variation-add-to-cart button {
+  background: #cab1a1;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 0;
+  min-width: 200px;
+}
+
+.woocommerce .single_variation_wrap .woocommerce-variation-add-to-cart button:hover {
+  background: #a57b60;
+}
+
+.woocommerce .single_variation_wrap .quantity {
+  position: absolute;
+  top: -40px;
+  left: 224px;
+}
+
+.woocommerce .single_variation_wrap .quantity:before {
+  content: 'Quantity';
+  position: absolute;
+  top: -40px;
+  line-height: 40px;
+  font-size: 18px;
+}
+
+.woocommerce .single_variation_wrap .quantity input {
+  height: 40px;
 }
