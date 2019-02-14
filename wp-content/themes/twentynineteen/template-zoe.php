@@ -9,7 +9,7 @@ get_header($template_slug);
   <img class="mobile" src="<?php echo get_assets_path('zoe') ?>/media/banner-mobile.jpg" />
 </section>
 
-<?php echo do_shortcode('[product_page id="9"]') ?>
+<?php echo do_shortcode('[product_page id="'.get_field('product_id').'"]') ?>
 
 <section class="detail container">
   <div class="figure">
