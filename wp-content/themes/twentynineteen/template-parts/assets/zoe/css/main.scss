@@ -1,3 +1,7 @@
+body {
+  background: #f4f4f4;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -252,10 +256,11 @@ footer {
           background: darken($color: #cab1a1, $amount: 20%);
         }
       }
+      a {
+        display: none;
+      }
     }
     .quantity {
-      display: flex;
-      align-items: center;
       position: absolute;
       top: -40px;
       left: 184px;
@@ -270,22 +275,6 @@ footer {
         font-size: 18px;
         top: -32px;
       }
-      input {
-        padding: 4px;
-        width: 50px;
-        height: 40px;
-        text-align: center;
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-          -webkit-appearance: none;
-        }
-      }
-      .fa-minus, .fa-plus {
-        padding: 12px;
-        font-size: 14px;
-        border: 1px solid #9b9b9b;
-        cursor: pointer;
-      }
     }
   }
   .woocommerce-notices-wrapper {
@@ -299,7 +288,7 @@ footer {
     }
   }
   .woocommerce-cart-form {
-    width: 70%;
+    width: 65%;
     float: left;
     .cart-title {
       padding-bottom: 16px;
@@ -311,23 +300,144 @@ footer {
       th, td {
         border: none;
       }
+      .product-remove > a {
+        background: transparent;
+        color: #9b9b9b !important;
+      }
+      .product-name {
+        width: 100%;
+        > a {
+          color: #424242;
+          text-decoration: none;
+        }
+      }
+      .product-price {
+        display: none;
+      }
+      .product-subtotal > span {
+        color: #fe347f;
+        font-weight: bold;
+      }
+      .actions {
+        display: none;
+      }
     }
   }
   .cart-collaterals {
-    padding-left: 16px;
-    width: 30%;
+    padding-left: 24px;
+    width: 35%;
     float: right;
     .cart_totals {
+      padding: 16px;
       width: 100%;
       float: none;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
       h2 {
-        margin-top: 92px;
+        position: relative;
+        padding-bottom: 16px;
         font-size: 16px;
         text-transform: uppercase;
         &:before {
-          display: none;
+          position: absolute;
+          bottom: 0;
+          margin: 0;
+          width: 100%;
         }
       }
+      >table {
+        font-size: 0.8em;
+        th, td {
+          border: none;
+          padding: 4px 0;
+        }
+        td {
+          text-align: right;
+        }
+        tr.shipping {
+          ul > li {
+            margin: 0 !important;
+          }
+          .woocommerce-shipping-destination {
+            font-size: 14px;
+            color: #9b9b9b;
+          }
+        }
+      }
+      .wc-proceed-to-checkout > a {
+        width: 100%;
+      }
+      .coupon {
+        display: flex;
+        margin-bottom: 16px;
+        height: 40px;
+        label {
+          display: none;
+        }
+        input {
+          width: 100%;
+          font-size: 16px;
+        }
+        button {
+          min-width: unset;
+          background-color: #21b7d1;
+        }
+      }
+    }
+  }
+  .return-to-shop {
+    display: none;
+  }
+  /** CHECKOUT - START */
+  form.woocommerce-checkout {
+    display: flex;
+    .order_review_heading {
+      display: none;
+    }
+  }
+}
+
+.btn-primary,
+.wc-proceed-to-checkout > a,
+.coupon > button {
+  padding: 8px 16px;
+  min-width: 200px;
+  background: #cab1a1;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 0;
+  &:hover {
+    background: darken($color: #cab1a1, $amount: 20%);
+  }
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  input {
+    padding: 4px;
+    width: 50px !important;
+    height: 40px;
+    text-align: center;
+    background: #fff;
+    border: none;
+    &:hover {
+      border: 1px solid #9b9b9b;
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+  .fa-minus, .fa-plus {
+    padding: 12px;
+    font-size: 14px;
+    background: #d8d8d8;
+    cursor: pointer;
+    &:hover {
+      background: #9b9b9b;
     }
   }
 }
