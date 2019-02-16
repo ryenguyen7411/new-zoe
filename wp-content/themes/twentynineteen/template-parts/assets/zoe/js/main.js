@@ -6,4 +6,6 @@ $(document).ready(function () {
 
   $('.quantity >.fa-minus').click(function () { this.nextElementSibling.stepDown() })
   $('.quantity >.fa-plus').click(function () { this.previousElementSibling.stepUp() })
+
+  $('.woocommerce-cart-form > table').before('<h4 class="cart-title">Cart</h4>')
 });

@@ -116,6 +116,7 @@ section.reason .reason-item h5 {
 section.social {
   padding: 48px 0;
   text-align: center;
+  clear: both;
 }
 
 section.social img {
@@ -352,4 +353,54 @@ footer .partners img {
   font-size: 14px;
   border: 1px solid #9b9b9b;
   cursor: pointer;
+}
+
+.woocommerce .woocommerce-notices-wrapper a {
+  padding: 8px 16px;
+  background: #cab1a1;
+  border-radius: 0;
+}
+
+.woocommerce .woocommerce-notices-wrapper a:hover {
+  background: #a57b60;
+}
+
+.woocommerce .woocommerce-cart-form {
+  width: 70%;
+  float: left;
+}
+
+.woocommerce .woocommerce-cart-form .cart-title {
+  padding-bottom: 16px;
+  margin-bottom: 64px;
+  border-bottom: 2px solid #424242;
+}
+
+.woocommerce .woocommerce-cart-form table {
+  font-size: 0.8em;
+}
+
+.woocommerce .woocommerce-cart-form table th, .woocommerce .woocommerce-cart-form table td {
+  border: none;
+}
+
+.woocommerce .cart-collaterals {
+  padding-left: 16px;
+  width: 30%;
+  float: right;
+}
+
+.woocommerce .cart-collaterals .cart_totals {
+  width: 100%;
+  float: none;
+}
+
+.woocommerce .cart-collaterals .cart_totals h2 {
+  margin-top: 92px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.woocommerce .cart-collaterals .cart_totals h2:before {
+  display: none;
 }

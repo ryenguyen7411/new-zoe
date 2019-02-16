@@ -91,6 +91,7 @@ section {
   &.social {
     padding: 48px 0;
     text-align: center;
+    clear: both;
     img {
       width: 24px;
       height: 24px;
@@ -284,6 +285,48 @@ footer {
         font-size: 14px;
         border: 1px solid #9b9b9b;
         cursor: pointer;
+      }
+    }
+  }
+  .woocommerce-notices-wrapper {
+    a {
+      padding: 8px 16px;
+      background: #cab1a1;
+      border-radius: 0;
+      &:hover {
+        background: darken($color: #cab1a1, $amount: 20%);
+      }
+    }
+  }
+  .woocommerce-cart-form {
+    width: 70%;
+    float: left;
+    .cart-title {
+      padding-bottom: 16px;
+      margin-bottom: 64px;
+      border-bottom: 2px solid #424242;
+    }
+    table {
+      font-size: 0.8em;
+      th, td {
+        border: none;
+      }
+    }
+  }
+  .cart-collaterals {
+    padding-left: 16px;
+    width: 30%;
+    float: right;
+    .cart_totals {
+      width: 100%;
+      float: none;
+      h2 {
+        margin-top: 92px;
+        font-size: 16px;
+        text-transform: uppercase;
+        &:before {
+          display: none;
+        }
       }
     }
   }
