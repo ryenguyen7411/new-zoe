@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
-if [ -z "$1" ]; then
-  echo "Please provide base name"
-else
-  cp wp-config-heroku.php wp-config.php
+cp wp-config-heroku.php wp-config.php
 
-  git add --all
-  git commit -m "temp"
-  git push heroku $1:master
+git add --all
+git commit -m "temp"
+git push heroku HEAD:master -f
 
-  git reset --hard HEAD~1
-  cp wp-config-local.php wp-config.php
-fi
+git reset --hard HEAD~1
+cp wp-config-local.php wp-config.php
