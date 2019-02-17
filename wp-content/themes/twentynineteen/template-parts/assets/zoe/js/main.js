@@ -1,6 +1,5 @@
 $(document).ready(function () {
   function rearrange() {
-    console.log('REARRANGE')
     $('select#color').after('<i class="fas fa-chevron-down"></i>')
 
     $('.quantity > input[type=number]').before('<i class="fas fa-minus"></i>')
@@ -19,6 +18,8 @@ $(document).ready(function () {
     const couponElem = $('.woocommerce-cart-form__contents .actions > .coupon')
     couponElem.children('button[type=submit]').text('Apply')
     $('.wc-proceed-to-checkout').before(couponElem)
+
+    $('button[name=apply_coupon]').text('Apply')
   }
 
   rearrange()

@@ -403,6 +403,7 @@ footer {
           float: none;
           button {
             height: 40px;
+            min-width: unset;
           }
         }
       }
@@ -411,6 +412,10 @@ footer {
 
   form.woocommerce-checkout {
     display: flex;
+    flex-wrap: wrap;
+    .woocommerce-NoticeGroup {
+      flex-basis: 100%;
+    }
     #customer_details {
       flex: 2;
       >div {

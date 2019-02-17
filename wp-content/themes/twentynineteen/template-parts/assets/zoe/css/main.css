@@ -491,10 +491,16 @@ footer .partners img {
 
 .woocommerce form.woocommerce-form-coupon > p.form-row-last button {
   height: 40px;
+  min-width: unset;
 }
 
 .woocommerce form.woocommerce-checkout {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.woocommerce form.woocommerce-checkout .woocommerce-NoticeGroup {
+  flex-basis: 100%;
 }
 
 .woocommerce form.woocommerce-checkout #customer_details {
