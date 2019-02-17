@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 cp wp-config-heroku.php wp-config.php
+cp .htaccess.heroku .htaccess
 
 git add --all
 git commit -m "temp"
@@ -8,3 +9,4 @@ git push heroku HEAD:master -f
 
 git reset --hard HEAD~1
 cp wp-config-local.php wp-config.php
+cp .htaccess.local .htaccess
