@@ -24,7 +24,6 @@ $(document).ready(function () {
 
   rearrange()
   $('input[type=number]').change(() => {
-    console.log('TRIGGER')
     rearrange()
   })
 });

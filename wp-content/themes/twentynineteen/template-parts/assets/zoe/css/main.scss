@@ -579,6 +579,110 @@ button#place_order,
   }
 }
 
+.faqs-container {
+  .faqs,
+  .help-center {
+    &.faqs-content {
+      .title {
+        font-size: 20px;
+        padding: 16px 0;
+        border-bottom: 1px solid #d8d8d8;
+        user-select: none;
+      }
+    }
+    .faq-category {
+      .faq-category-title {
+        padding: 18px;
+        font-size: 18px;
+        color: #41B2EC;
+        border-bottom: 1px solid #d8d8d8;
+        user-select: none;
+      }
+    }
+    .faq-item {
+      padding: 8px 16px;
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 14px;
+      .faq-item-title {
+        padding: 8px 0;
+        user-select: none;
+        i {
+          margin-right: 8px;
+        }
+      }
+      .faq-item-content {
+        padding: 16px 22px;
+        cursor: auto;
+      }
+    }
+    .expand {
+      cursor: pointer;
+      &.faq-item {
+        .faq-item-title {
+          color: #41B2EC;
+          font-weight: bold;
+        }
+      }
+    }
+    .collapse {
+      display: inherit;
+      cursor: pointer;
+      >.collapsible {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        padding: 0;
+      }
+    }
+  }
+  .search-container {
+    padding: 32px;
+  	border: 1px solid #d8d8d8;
+    .search-box {
+      height: 32px;
+      width: 100%;
+      font-size: 14px;
+    }
+    .search-suggestions {
+      position: absolute;
+      width: 60%;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 5px 10px rgba(0,0,0,.2);
+      background: white;
+      padding: 8px 0;
+    }
+    .suggestion-item {
+      padding: 2px 12px;
+      font-size: 14px;
+      color: #41B2EC;
+      cursor: pointer;
+      &:hover {
+        background-color: #41B2EC;
+        color: white;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .faqs, .help-center {
+      .faq-category-title {
+        padding: 16px 0 !important;
+      }
+      .faq-item {
+        padding: 8px 0;
+      }
+      .faq-item-content {
+        padding: 16px;
+      }
+    }
+    .search-container {
+      padding: 16px;
+    }
+  }
+  .hide {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .woocommerce {
     .woocommerce-cart-form,

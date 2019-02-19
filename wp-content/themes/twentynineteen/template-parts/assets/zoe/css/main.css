@@ -681,6 +681,123 @@ button#place_order:hover,
   background: #9b9b9b;
 }
 
+.faqs-container .faqs.faqs-content .title,
+.faqs-container .help-center.faqs-content .title {
+  font-size: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #d8d8d8;
+  user-select: none;
+}
+
+.faqs-container .faqs .faq-category .faq-category-title,
+.faqs-container .help-center .faq-category .faq-category-title {
+  padding: 18px;
+  font-size: 18px;
+  color: #41B2EC;
+  border-bottom: 1px solid #d8d8d8;
+  user-select: none;
+}
+
+.faqs-container .faqs .faq-item,
+.faqs-container .help-center .faq-item {
+  padding: 8px 16px;
+  border-bottom: 1px solid #d8d8d8;
+  font-size: 14px;
+}
+
+.faqs-container .faqs .faq-item .faq-item-title,
+.faqs-container .help-center .faq-item .faq-item-title {
+  padding: 8px 0;
+  user-select: none;
+}
+
+.faqs-container .faqs .faq-item .faq-item-title i,
+.faqs-container .help-center .faq-item .faq-item-title i {
+  margin-right: 8px;
+}
+
+.faqs-container .faqs .faq-item .faq-item-content,
+.faqs-container .help-center .faq-item .faq-item-content {
+  padding: 16px 22px;
+  cursor: auto;
+}
+
+.faqs-container .faqs .expand,
+.faqs-container .help-center .expand {
+  cursor: pointer;
+}
+
+.faqs-container .faqs .expand.faq-item .faq-item-title,
+.faqs-container .help-center .expand.faq-item .faq-item-title {
+  color: #41B2EC;
+  font-weight: bold;
+}
+
+.faqs-container .faqs .collapse,
+.faqs-container .help-center .collapse {
+  display: inherit;
+  cursor: pointer;
+}
+
+.faqs-container .faqs .collapse > .collapsible,
+.faqs-container .help-center .collapse > .collapsible {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+}
+
+.faqs-container .search-container {
+  padding: 32px;
+  border: 1px solid #d8d8d8;
+}
+
+.faqs-container .search-container .search-box {
+  height: 32px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.faqs-container .search-container .search-suggestions {
+  position: absolute;
+  width: 60%;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 8px 0;
+}
+
+.faqs-container .search-container .suggestion-item {
+  padding: 2px 12px;
+  font-size: 14px;
+  color: #41B2EC;
+  cursor: pointer;
+}
+
+.faqs-container .search-container .suggestion-item:hover {
+  background-color: #41B2EC;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .faqs-container .faqs .faq-category-title, .faqs-container .help-center .faq-category-title {
+    padding: 16px 0 !important;
+  }
+  .faqs-container .faqs .faq-item, .faqs-container .help-center .faq-item {
+    padding: 8px 0;
+  }
+  .faqs-container .faqs .faq-item-content, .faqs-container .help-center .faq-item-content {
+    padding: 16px;
+  }
+  .faqs-container .search-container {
+    padding: 16px;
+  }
+}
+
+.faqs-container .hide {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .woocommerce .woocommerce-cart-form,
   .woocommerce .cart-collaterals {
