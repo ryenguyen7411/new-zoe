@@ -325,3 +325,5 @@ require get_template_directory() . '/inc/customizer.php';
 function get_assets_path($template) {
 	return get_template_directory_uri() . '/template-parts/assets/' . $template;
 }
+
+require_once get_parent_theme_file_path( '/builders/global-cf.php' );
