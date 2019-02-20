@@ -29,7 +29,6 @@ header .header-wrapper .navbar i {
 header .header-wrapper .navbar a {
   display: inline-block;
   padding: 8px 16px;
-  min-width: 100px;
   line-height: 100%;
 }
 
@@ -47,7 +46,7 @@ header .header-wrapper .navbar a.active {
   header .header-wrapper .navbar > ul {
     position: absolute;
     right: 0;
-    top: 100%;
+    top: calc(100% - 12px);
     flex-direction: column;
     z-index: 1000;
     background: white;

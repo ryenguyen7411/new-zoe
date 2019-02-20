@@ -1,4 +1,15 @@
 $(document).ready(function () {
+  $('.navbar > .fa-bars').click(function () {
+    $('.navbar').addClass('show')
+  })
+
+  $(document).click(function (e) {
+    $target = $(e.target)
+    if (!$target.closest('.navbar').length){
+      $('.navbar').removeClass('show')
+    }
+  })
+
   function rearrange() {
     $('select#color').after('<i class="fas fa-chevron-down"></i>')
 

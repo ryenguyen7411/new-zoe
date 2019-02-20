@@ -36,8 +36,8 @@
           <i class="fa fa-bars"></i>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/cart">Cart</a></li>
-            <li><a href="/faqs">Faqs</a></li>
+            <li><a href="<?php echo get_field('cart_url') ?>">Cart</a></li>
+            <li><a href="<?php echo get_field('faqs_url') ?>">Faqs</a></li>
           </ul>
         </div>
       </div>

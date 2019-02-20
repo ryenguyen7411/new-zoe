@@ -24,7 +24,6 @@ header {
       a {
         display: inline-block;
         padding: 8px 16px;
-        min-width: 100px;
         line-height: 100%;
         &.active {
           color: #cab1a1;
@@ -38,7 +37,7 @@ header {
         >ul {
           position: absolute;
           right: 0;
-          top: 100%;
+          top: calc(100% - 12px);
           flex-direction: column;
           z-index: 1000;
           background: white;
