@@ -10,6 +10,24 @@ $(document).ready(function () {
     }
   })
 
+  $(window).scroll(function() {
+      if ($(window).scrollTop() >= ($('.entry-summary').offset().top + $('.entry-summary').height())) {
+        $('.btn-scroll-top').addClass('show');
+        // $('.cart-fix-bottom').addClass('show');
+        $('.xoo-wsc-basket').removeClass('show');
+        syncBottomCart();
+      } else {
+        $('.btn-scroll-top').removeClass('show');
+        // $('.cart-fix-bottom').removeClass('show');
+        $('.xoo-wsc-basket').addClass('show');
+      }
+    });
+
+    $('.btn-scroll-top').click(function() {
+      var productListTop = $('.entry-summary').offset().top - 64
+      $('html, body').stop().animate({scrollTop: productListTop}, 500)
+    })
+
   function rearrange() {
     $('select#color').after('<i class="fas fa-chevron-down"></i>')
 
@@ -37,4 +55,9 @@ $(document).ready(function () {
   $('input[type=number]').change(() => {
     rearrange()
   })
+
+  function syncBottomCart() {
+    // Sync value from product
+
+  }
 });
