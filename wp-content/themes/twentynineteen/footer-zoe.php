@@ -31,6 +31,37 @@ $template_slug = 'zoe';
   </div>
 </footer>
 
+<div class="pulse-button btn-scroll-top">
+  <span class="icon"><i class="fa fa-shopping-cart"></i></span>
+  SHOP NOW
+</div>
+
+<div class="cart-fix-bottom">
+  <div class="info">
+    <img src="">
+    <div class="content">
+      <h4></h4>
+    </div>
+  </div>
+  <div class="variant">
+    <!-- SELECT VARIANT -->
+    <!-- QUANTITY SELECT -->
+  </div>
+
+  <div class="btn-add-to-cart">
+    <div class="price-info">
+      {% if product.compare_at_price_max > product.price %}
+      <div class="old-price">{{ current_variant.compare_at_price | money }}</div>
+      {% endif %}
+      <div class="new-price">{{ current_variant.price | money }}</div>
+    </div>
+    <button type="submit" name="add" id="AddToCart-{{ section.id }}"
+      class="btn btn--fill btn--regular btn--color{% if section.settings.enable_payment_button %} btn--shopify-payment-btn btn--secondary-accent{% endif %}">
+      <span id="AddToCartText-{{ section.id }}">Add to cart</span>
+    </button>
+  </div>
+</div>
+
 </body>
 
 </html>

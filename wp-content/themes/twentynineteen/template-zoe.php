@@ -5,8 +5,8 @@ get_header($template_slug);
 ?>
 
 <section class="banner container">
-  <img class="desktop" src="<?php echo get_assets_path('zoe') ?>/media/banner.png" />
-  <img class="mobile" src="<?php echo get_assets_path('zoe') ?>/media/banner-mobile.jpg" />
+  <img class="desktop" src="<?php echo get_field('zoe_banner') ?>" />
+  <img class="mobile" src="<?php echo get_field('zoe_banner_mobile') ?>" />
 </section>
 
 <?php echo do_shortcode('[product_page id="'.get_field('product_id').'"]') ?>
