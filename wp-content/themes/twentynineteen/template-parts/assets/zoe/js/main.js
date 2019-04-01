@@ -13,9 +13,8 @@ $(document).ready(function () {
   $(window).scroll(function() {
       if ($(window).scrollTop() >= ($('.entry-summary').offset().top + $('.entry-summary').height())) {
         $('.btn-scroll-top').addClass('show');
-        $('.cart-fix-bottom').addClass('show');
         $('.xoo-wsc-basket').removeClass('show');
-        syncBottomCart();
+        // syncBottomCart();
       } else {
         $('.btn-scroll-top').removeClass('show');
         $('.cart-fix-bottom').removeClass('show');
@@ -57,7 +56,49 @@ $(document).ready(function () {
   })
 
   function syncBottomCart() {
-    // Sync value from product
+    const $cart = $('.cart-fix-bottom')
+    if ($cart.hasClass('show')) return
 
+    $cart.addClass('show')
+    // Sync value from product
+    const $img = $('.woocommerce-product-gallery img').clone()
+    const $title = $('.entry-summary .product_title').clone()
+    const $price = $('.woocommerce-variation-price .amount').clone()
+
+    const $selectVariant = $('table.variations select')
+    const $selectQuantity = $('.single_variation_wrap .quantity')
+
+    const $btnAddToCart = $('.single_variation_wrap button[type="submit"]')
+    const $btnAddToCartCloned = $btnAddToCart.clone()
+    $btnAddToCartCloned.click(function (e) {
+      $('.single_variation_wrap button[type="submit"]').click()
+    })
+
+    const $infoElem = $('<div>').attr('class', 'info')
+      .append($img)
+      .append($('<div>').attr('class', 'content').append($title)
+    )
+
+    $cart.html('')
+      .append($infoElem)
+      .append($selectVariant.clone())
+      .append('<i class="fas fa-chevron-down"></i>')
+      .append($selectQuantity.clone())
+      .append($price)
+      .append($btnAddToCartCloned)
+
+    const bothselects = $("table.variations select, .cart-fix-bottom select");
+    bothselects.change(function(e) {
+      bothselects.val(this.value);
+    });
+
+    $('.cart-fix-bottom .quantity >.fa-minus').click(function () {
+      this.nextElementSibling.stepDown()
+      $selectQuantity.find('input[type=number]')[0].stepDown()
+    })
+    $('.cart-fix-bottom .quantity >.fa-plus').click(function () {
+      this.previousElementSibling.stepUp()
+      $selectQuantity.find('input[type=number]')[0].stepUp()
+    })
   }
 });

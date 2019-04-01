@@ -38,10 +38,7 @@ $template_slug = 'zoe';
 
 <div class="cart-fix-bottom">
   <div class="info">
-    <img src="">
-    <div class="content">
-      <h4></h4>
-    </div>
+
   </div>
   <div class="variant">
     <!-- SELECT VARIANT -->

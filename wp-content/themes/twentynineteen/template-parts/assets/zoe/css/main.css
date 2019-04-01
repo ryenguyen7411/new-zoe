@@ -330,9 +330,10 @@ footer .partners img {
 
 .cart-fix-bottom > .info img {
   height: 48px;
+  width: 48px;
 }
 
-.cart-fix-bottom > .info h4 {
+.cart-fix-bottom > .info .product_title {
   font-size: 16px;
   color: #cab1a1;
   max-width: 15vw;
@@ -341,30 +342,46 @@ footer .partners img {
   overflow: hidden;
 }
 
-.cart-fix-bottom > .variant {
-  margin: -10px 40px;
+.cart-fix-bottom > .info .product_title:before {
+  display: none;
 }
 
-.cart-fix-bottom > .variant .form__row {
+.cart-fix-bottom select#color {
+  padding-left: 12px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+}
+
+.cart-fix-bottom .fa-chevron-down {
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #9b9b9b;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.cart-fix-bottom > button[type="submit"] {
   display: flex;
 }
 
-.cart-fix-bottom > .btn-add-to-cart {
-  display: flex;
-}
-
-.cart-fix-bottom > .btn-add-to-cart .price-info {
+.cart-fix-bottom > button[type="submit"] .price-info {
   display: flex;
   align-items: center;
   padding: 0 4px;
 }
 
-.cart-fix-bottom > .btn-add-to-cart .price-info .old-price {
+.cart-fix-bottom > button[type="submit"] .price-info .old-price {
   font-size: 12px;
   text-decoration: line-through;
 }
 
-.cart-fix-bottom > .btn-add-to-cart .price-info .new-price {
+.cart-fix-bottom > button[type="submit"] .price-info .new-price {
   padding-left: 4px;
   font-size: 16px;
   color: #cab1a1;
@@ -378,20 +395,12 @@ footer .partners img {
   .cart-fix-bottom > .info {
     flex-basis: 30%;
   }
-  .cart-fix-bottom > .btn-add-to-cart {
+  .cart-fix-bottom > button[type="submit"] {
     flex-basis: 70%;
   }
-  .cart-fix-bottom > .btn-add-to-cart button {
+  .cart-fix-bottom > button[type="submit"] button {
     padding: 0 8px;
     width: 100%;
-  }
-  .cart-fix-bottom .variant {
-    flex-basis: 100%;
-    order: 1;
-    margin: 0 4px 0 18px;
-  }
-  .cart-fix-bottom .variant .form__row {
-    margin-top: 4px;
   }
 }
 
