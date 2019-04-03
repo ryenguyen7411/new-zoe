@@ -14,7 +14,7 @@ $(document).ready(function () {
       if ($(window).scrollTop() >= ($('.entry-summary').offset().top + $('.entry-summary').height())) {
         $('.btn-scroll-top').addClass('show');
         $('.xoo-wsc-basket').removeClass('show');
-        // syncBottomCart();
+        syncBottomCart();
       } else {
         $('.btn-scroll-top').removeClass('show');
         $('.cart-fix-bottom').removeClass('show');

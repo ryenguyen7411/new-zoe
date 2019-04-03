@@ -27,8 +27,8 @@ get_header($template_slug);
 </section>
 
 <section class="main-content container">
-  <img class="desktop" src="<?php echo get_assets_path('zoe') ?>/media/main-content.png" />
-  <img class="mobile" src="<?php echo get_assets_path('zoe') ?>/media/main-content-mobile.jpg" />
+  <img class="desktop" src="<?php echo get_field('zoe_content') ?>" />
+  <img class="mobile" src="<?php echo get_field('zoe_content_mobile') ?>" />
 </section>
 
 <section class="reason container">
