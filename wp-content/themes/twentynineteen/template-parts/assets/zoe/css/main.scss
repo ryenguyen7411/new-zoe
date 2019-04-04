@@ -8,6 +8,11 @@ header {
     justify-content: space-between;
     height: 60px;
     line-height: 60px;
+    .logo {
+      img {
+        height: 32px;
+      }
+    }
     .navbar {
       position: relative;
       padding: 0;

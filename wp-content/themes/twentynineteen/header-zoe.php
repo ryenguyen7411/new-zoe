@@ -29,8 +29,8 @@
   <body <?php body_class(); ?>>
     <header>
       <div class="header-wrapper container">
-        <div class="logo"><a href="/">Zoe Beautycorner</a>
-          <!-- <img src="<?php echo get_assets_path('zoe')?>/media/logo.png" /> -->
+        <div class="logo">
+          <img src="<?php echo get_assets_path('zoe')?>/media/logo.png" />
         </div>
         <div class="navbar">
           <i class="fa fa-bars"></i>

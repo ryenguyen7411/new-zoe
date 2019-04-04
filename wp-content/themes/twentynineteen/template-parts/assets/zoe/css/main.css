@@ -9,6 +9,10 @@ header .header-wrapper {
   line-height: 60px;
 }
 
+header .header-wrapper .logo img {
+  height: 32px;
+}
+
 header .header-wrapper .navbar {
   position: relative;
   padding: 0;
