@@ -30,7 +30,7 @@
     <header>
       <div class="header-wrapper container">
         <div class="logo">
-          <img src="<?php echo get_assets_path('zoe')?>/media/logo.png" />
+          <a href="/"><img src="<?php echo get_assets_path('zoe')?>/media/logo.png" /></a>
         </div>
         <div class="navbar">
           <i class="fa fa-bars"></i>

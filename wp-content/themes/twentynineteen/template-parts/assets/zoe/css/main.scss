@@ -36,46 +36,7 @@ header {
           font-weight: bold;
         }
       }
-      @media (max-width: 767px) {
-        visibility: hidden;
-        width: 52px;
-        >ul {
-          position: absolute;
-          right: 0;
-          top: calc(100% - 12px);
-          flex-direction: column;
-          z-index: 1000;
-          background: white;
-          box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
-        }
-        i {
-          position: absolute;
-          right: -10px;
-          visibility: visible;
-          padding: 20px;
-          font-size: 20px;
-        }
-        a {
-          padding: 16px;
-          min-width: 150px;
-        }
-        &.show {
-          flex-direction: column;
-          visibility: visible;
-        }
-      }
     }
-  }
-}
-
-.desktop {
-  @media (max-width: 767px) {
-    display: none;
-  }
-}
-.mobile {
-  @media (min-width: 768px) {
-    display: none;
   }
 }
 
@@ -83,17 +44,10 @@ section {
   &.banner {
     display: flex;
     align-items: center;
-    min-height: 300px;
   }
   &.detail {
     display: flex;
     padding: 96px 0;
-    @media (max-width: 768px) {
-      flex-direction: column;
-      .content {
-        padding: 32px 0 !important;
-      }
-    }
     .figure {
       position: relative;
       flex-basis: 45%;
@@ -140,12 +94,6 @@ section {
       margin-top: 16px;
       padding: 0 8px;
       font-size: 13px;
-      @media (min-width: 768px) {
-        flex-basis: 50%;
-      }
-      @media (min-width: 992px) {
-        flex-basis: calc(100% / 3);
-      }
       h5 {
         font-size: 20px;
       }
@@ -361,13 +309,6 @@ footer {
   }
   .product {
     display: flex;
-    @media (max-width: 767px) {
-      flex-direction: column;
-      text-align: center;
-      .summary .entry-title:before {
-        left: calc(50% - 40px) !important;
-      }
-    }
     .onsale {
       display: none;
     }
@@ -407,15 +348,6 @@ footer {
           text-decoration: none;
           background: none;
         }
-      }
-    }
-    @media (min-width: 992px) {
-      .woocommerce-product-gallery {
-        width: 40%;
-        padding-right: 64px;
-      }
-      .summary {
-        width: 60%;
       }
     }
   }
@@ -911,6 +843,53 @@ button#place_order,
 }
 
 @media (max-width: 767px) {
+  header .header-wrapper {
+    .navbar {
+      visibility: hidden;
+        width: 52px;
+        >ul {
+          position: absolute;
+          right: 0;
+          top: calc(100% - 12px);
+          flex-direction: column;
+          z-index: 1000;
+          background: white;
+          box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+        }
+        i {
+          position: absolute;
+          right: -10px;
+          visibility: visible;
+          padding: 20px;
+          font-size: 20px;
+        }
+        a {
+          padding: 16px;
+          min-width: 150px;
+        }
+        &.show {
+          flex-direction: column;
+          visibility: visible;
+        }
+    }
+  }
+  section {
+    &.banner {
+      margin: 32px 0 -64px;
+    }
+    &.detail {
+      flex-direction: column;
+      padding: 0 16px;
+      .content {
+        padding: 32px 0 !important;
+      }
+      .figure {
+        .before, .after {
+          background-position: -150px center;
+        }
+      }
+    }
+  }
   .woocommerce {
     .woocommerce-cart-form,
     .cart-collaterals {
@@ -920,6 +899,53 @@ button#place_order,
     }
     table tbody tr:first-child {
       border: none !important;
+    }
+    .product {
+      flex-direction: column;
+      text-align: center;
+      .summary .entry-title:before {
+        left: calc(50% - 40px) !important;
+      }
+    }
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  section {
+    &.banner {
+      min-height: 300px;
+    }
+    &.reason {
+      .reason-item {
+        flex-basis: 50%;
+      }
+    }
+  }
+  .mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  section {
+    &.reason {
+      .reason-item {
+        flex-basis: calc(100% / 3);
+      }
+    }
+  }
+  .woocommerce {
+    .product {
+      .woocommerce-product-gallery {
+        width: 40%;
+        padding-right: 64px;
+      }
+      .summary {
+        width: 60%;
+      }
     }
   }
 }
