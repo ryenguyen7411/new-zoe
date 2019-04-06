@@ -267,15 +267,21 @@ footer .partners img {
 
 .cart-fix-bottom > .info {
   display: flex;
+  height: 60px;
 }
 
 .cart-fix-bottom > .info img {
-  height: 48px;
-  width: 48px;
+  width: 50px;
+}
+
+.cart-fix-bottom > .info .content {
+  padding-left: 6px;
+  line-height: 20px;
 }
 
 .cart-fix-bottom > .info .product_title {
-  font-size: 16px;
+  margin: 0;
+  font-size: 18px;
   color: #cab1a1;
   max-width: 15vw;
   white-space: nowrap;
@@ -287,11 +293,25 @@ footer .partners img {
   display: none;
 }
 
-.cart-fix-bottom select#color {
+.cart-fix-bottom > .info .woocommerce-variation-price {
+  font-size: 14px;
+}
+
+.cart-fix-bottom > .info .woocommerce-variation-price ins {
+  font-weight: bold;
+}
+
+.cart-fix-bottom > .option {
+  display: flex;
+  padding: 0 8px;
+}
+
+.cart-fix-bottom > .option select#color {
   padding-left: 12px;
   height: 40px;
   width: 120px;
   font-size: 16px;
+  background: white;
   cursor: pointer;
   -moz-appearance: none;
   /* Firefox */
@@ -300,7 +320,7 @@ footer .partners img {
   appearance: none;
 }
 
-.cart-fix-bottom .fa-chevron-down {
+.cart-fix-bottom > .option .fa-chevron-down {
   padding: 12px;
   height: 40px;
   background: #fff;
@@ -309,56 +329,41 @@ footer .partners img {
   pointer-events: none;
 }
 
-.cart-fix-bottom .quantity {
+.cart-fix-bottom > .option .quantity {
   margin: 0 4px;
   border: 1px solid #9b9b9b;
 }
 
-.cart-fix-bottom .quantity > i {
+.cart-fix-bottom > .option .quantity > i {
   display: none;
 }
 
-.cart-fix-bottom .amount {
-  font-size: 14px;
-  font-weight: bold;
-  color: #cab1a1;
+.cart-fix-bottom > .option .quantity input {
+  width: 40px !important;
+  height: 100%;
 }
 
-.cart-fix-bottom > button[type="submit"] {
-  display: flex;
-}
-
-.cart-fix-bottom > button[type="submit"] .price-info {
-  display: flex;
-  align-items: center;
-  padding: 0 4px;
-}
-
-.cart-fix-bottom > button[type="submit"] .price-info .old-price {
-  font-size: 12px;
-  text-decoration: line-through;
-}
-
-.cart-fix-bottom > button[type="submit"] .price-info .new-price {
-  padding-left: 4px;
+.cart-fix-bottom > .action > button {
+  background: #cab1a1;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0;
+  min-width: 200px;
+  height: 40px;
   font-size: 16px;
-  color: #cab1a1;
 }
 
 @media (max-width: 767px) {
   .cart-fix-bottom {
     flex-wrap: wrap;
-    height: 114px;
+    height: 120px;
   }
-  .cart-fix-bottom > .info {
-    flex-basis: 30%;
+  .cart-fix-bottom > .option select {
+    width: 100px !important;
   }
-  .cart-fix-bottom > button[type="submit"] {
-    flex-basis: 70%;
-  }
-  .cart-fix-bottom > button[type="submit"] button {
-    padding: 0 8px;
-    width: 100%;
+  .cart-fix-bottom > .action button {
+    min-width: 120px !important;
   }
 }
 

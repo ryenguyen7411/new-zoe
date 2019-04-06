@@ -1,11 +1,11 @@
 $(document).ready(function () {
   $(document).click(function (e) {
-    e.preventDefault()
     $target = $(e.target)
 
-    const clickOnNavbar = $target.closest('.navbar').length > 0;
+    const clickOnNavbar = $target.closest('.navbar .fa-bars').length > 0;
     if (clickOnNavbar) {
       $('.navbar').toggleClass('show')
+      e.preventDefault()
     } else {
       $('.navbar').removeClass('show')
     }
@@ -64,7 +64,7 @@ $(document).ready(function () {
     // Sync value from product
     const $img = $('.woocommerce-product-gallery img').clone()
     const $title = $('.entry-summary .product_title').clone()
-    const $price = $('.woocommerce-variation-price .amount').clone()
+    const $price = $('.single_variation_wrap .woocommerce-variation-price').clone()
 
     const $selectVariant = $('table.variations select')
     const $selectQuantity = $('.single_variation_wrap .quantity')
@@ -77,16 +77,18 @@ $(document).ready(function () {
 
     const $infoElem = $('<div>').attr('class', 'info')
       .append($img)
-      .append($('<div>').attr('class', 'content').append($title)
-    )
-
-    $cart.html('')
-      .append($infoElem)
+      .append($('<div>').attr('class', 'content').append($title).append($price))
+    const $optionElem = $('<div>').attr('class', 'option')
       .append($selectVariant.clone())
       .append('<i class="fas fa-chevron-down"></i>')
       .append($selectQuantity.clone())
-      .append($price)
+    const $actionElem = $('<div>').attr('class', 'action')
       .append($btnAddToCartCloned)
+
+    $cart.html('')
+      .append($infoElem)
+      .append($optionElem)
+      .append($actionElem)
 
     const bothselects = $("table.variations select, .cart-fix-bottom select");
     bothselects.change(function(e) {
