@@ -64,7 +64,7 @@ $(document).ready(function () {
     // Sync value from product
     const $img = $('.woocommerce-product-gallery img').clone()
     const $title = $('.entry-summary .product_title').clone()
-    const $price = $('.single_variation_wrap .woocommerce-variation-price').clone()
+    const $price = $('.single_variation_wrap .woocommerce-variation-price') || $('.entry-summary .price')
 
     const $selectVariant = $('table.variations select')
     const $selectQuantity = $('.single_variation_wrap .quantity')
@@ -77,7 +77,7 @@ $(document).ready(function () {
 
     const $infoElem = $('<div>').attr('class', 'info')
       .append($img)
-      .append($('<div>').attr('class', 'content').append($title).append($price))
+      .append($('<div>').attr('class', 'content').append($title).append($price.clone()))
     const $optionElem = $('<div>').attr('class', 'option')
       .append($selectVariant.clone())
       .append('<i class="fas fa-chevron-down"></i>')
