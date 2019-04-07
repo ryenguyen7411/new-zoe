@@ -33,7 +33,7 @@ $template_slug = 'zoe';
 
 <div class="pulse-button btn-scroll-top">
   <span class="icon"><i class="fa fa-shopping-cart"></i></span>
-  SHOP NOW
+  <span class="desktop">SHOP NOW</span>
 </div>
 
 <div class="cart-fix-bottom">

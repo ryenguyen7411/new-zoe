@@ -65,6 +65,7 @@ $(document).ready(function () {
     const $img = $('.woocommerce-product-gallery img').clone()
     const $title = $('.entry-summary .product_title').clone()
     const $price = $('.single_variation_wrap .woocommerce-variation-price') || $('.entry-summary .price')
+    // STILL HAVE EMPTY PRICE
 
     const $selectVariant = $('table.variations select')
     const $selectQuantity = $('.single_variation_wrap .quantity')

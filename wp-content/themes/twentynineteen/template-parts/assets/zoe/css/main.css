@@ -165,9 +165,8 @@ footer .partners img {
 
 .btn-scroll-top {
   position: fixed;
-  right: 10px;
-  bottom: 70px;
-  padding: 0 12px 0 0;
+  right: 8px;
+  bottom: 8px;
   color: #fff;
   background: #424242;
   height: 48px;
@@ -179,12 +178,12 @@ footer .partners img {
   cursor: pointer;
   transform: translateX(200%);
   transition: all .3s;
+  z-index: 10001;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .btn-scroll-top {
-    right: 8px;
-    bottom: 8px;
+    padding-right: 12px;
   }
 }
 
@@ -272,6 +271,7 @@ footer .partners img {
 
 .cart-fix-bottom > .info img {
   width: 50px;
+  height: 50px;
 }
 
 .cart-fix-bottom > .info .content {
@@ -358,6 +358,9 @@ footer .partners img {
   .cart-fix-bottom {
     flex-wrap: wrap;
     height: 120px;
+  }
+  .cart-fix-bottom > .info .woocommerce-variation-price {
+    display: none;
   }
   .cart-fix-bottom > .option select {
     width: 100px !important;
