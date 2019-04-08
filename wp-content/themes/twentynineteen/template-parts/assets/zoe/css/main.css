@@ -2,6 +2,12 @@ body {
   background: #f4f4f4;
 }
 
+.mw-720 {
+  max-width: 720px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 header .header-wrapper {
   display: flex;
   justify-content: space-between;
@@ -142,6 +148,10 @@ section.page-content h3 {
 
 section.page-content a {
   color: #cab1a1;
+}
+
+section.page-content .wpforms-form {
+  margin-top: 64px;
 }
 
 footer {
