@@ -127,6 +127,23 @@ section.social img {
   height: 24px;
 }
 
+section.page-content {
+  margin: 64px 0;
+  font-size: 14px;
+}
+
+section.page-content h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 30px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #9b9b9b;
+}
+
+section.page-content a {
+  color: #cab1a1;
+}
+
 footer {
   padding: 96px 0;
   text-align: center;
