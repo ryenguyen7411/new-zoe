@@ -35,7 +35,6 @@
         <div class="navbar">
           <i class="fa fa-bars"></i>
           <ul>
-            <?php echo $GLOBALS['global_cf']['cart_url'] ?>
             <li><a href="/">Home</a></li>
             <li><a href="<?php echo get_option('cart_url') ?>">Cart</a></li>
             <li><a href="<?php echo get_option('faqs_url') ?>">Faqs</a></li>

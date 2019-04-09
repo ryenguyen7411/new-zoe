@@ -161,12 +161,37 @@ footer {
   color: #d8d8d8;
 }
 
-footer .logo {
-  margin-bottom: 48px;
+footer .logo a {
+  color: white;
+  text-decoration: none !important;
 }
 
-footer .logo a {
-  text-decoration: none !important;
+footer .footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 48px 0;
+}
+
+footer .footer-nav-item {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+footer .footer-nav-item a {
+  color: white;
+}
+
+@media (max-width: 575px) {
+  footer .footer-nav-item {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  footer .footer-nav-item {
+    flex-basis: calc(100% / 3);
+  }
 }
 
 footer .copyright {

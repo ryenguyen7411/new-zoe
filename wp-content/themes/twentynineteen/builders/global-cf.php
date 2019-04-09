@@ -15,7 +15,12 @@ function global_cf() {
     <?php wp_nonce_field('update-options') ?>
     <?php $global_cf = array(
       (object)['title' => 'Cart URL', 'field' => 'cart_url'],
-      (object)['title' => 'Faqs URL', 'field' => 'faqs_url']
+      (object)['title' => 'Faqs URL', 'field' => 'faqs_url'],
+      (object)['title' => 'About Us URL', 'field' => 'about_us_url'],
+      (object)['title' => 'Contact Us URL', 'field' => 'contact_us_url'],
+      (object)['title' => 'Refund Policy URL', 'field' => 'refund_url'],
+      (object)['title' => 'Privacy Policy URL', 'field' => 'privacy_url'],
+      (object)['title' => 'Term & Condition URL', 'field' => 'term_url'],
     ) ?>
 
     <?php foreach($global_cf as $var) { ?>

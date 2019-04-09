@@ -144,9 +144,28 @@ footer {
   background: #000;
   color: #d8d8d8;
   .logo {
-    margin-bottom: 48px;
     a {
+      color: white;
       text-decoration: none !important;
+    }
+  }
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 48px 0;
+    &-item {
+      margin: 8px 0;
+      font-size: 14px;
+      a {
+        color: white;
+      }
+      @media (max-width: 575px) {
+        flex-basis: 50%;
+      }
+      @media (min-width: 576px) and (max-width: 767px) {
+        flex-basis: calc(100% / 3);
+      }
     }
   }
   .copyright {

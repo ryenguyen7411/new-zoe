@@ -14,7 +14,16 @@ $template_slug = 'zoe';
 
 <footer>
   <div class="container">
-    <div class="logo">Zoe Beautycorner</div>
+    <div class="logo"><a href="/">ZOECOSMETICS</a></div>
+    <div class="footer-nav">
+      <div class="footer-nav-item"><a href="<?php echo get_option('about_us_url') ?>">About us</a></div>
+      <div class="footer-nav-item"><a href="<?php echo get_option('contact_us_url') ?>">Contact Us</a></div>
+      <div class="footer-nav-item"><a href="<?php echo get_option('faqs_url') ?>">FAQs</a></div>
+      <div class="footer-nav-item"><a href="<?php echo get_option('refund_url') ?>">Refund Policy</a></div>
+      <div class="footer-nav-item"><a href="<?php echo get_option('privacy_url') ?>">Privacy Policy</a></div>
+      <div class="footer-nav-item"><a href="<?php echo get_option('term_condition_url') ?>">Term & Condition</a></div>
+    </div>
+
     <div class="copyright">Copyright © 2019 Zoe</div>
 
     <div class="partners">
