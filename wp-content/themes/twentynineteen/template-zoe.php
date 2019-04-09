@@ -11,6 +11,26 @@ get_header($template_slug);
 
 <?php echo do_shortcode('[product_page id="'.get_field('product_id').'"]') ?>
 
+<section class="container discount">
+  <h4>STORE WIDE BULK DISCOUNT</h4>
+
+  <table class="discount-table">
+    <tr>
+      <th>Buy</th>
+      <th>Discount</th>
+    </tr>
+    <?php
+    $discounts = get_field('zoe_discount_table');
+    for ($x = 1; $x <= 4; $x++) { ?>
+    <tr>
+      <td><b><?php echo $discounts['discount_rule_' . $x] ?></b></td>
+      <td><?php echo $discounts['discount_' . $x] ?></td>
+    </tr>
+    <?php }
+    ?>
+  </table>
+</section>
+
 <section class="detail container">
   <div class="figure">
     <div class="before" style="background-image: url('<?php echo get_assets_path('zoe') ?>/media/before_600x.jpg')">

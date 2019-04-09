@@ -136,6 +136,11 @@ section {
       }
     }
   }
+  &.discount {
+    h4 {
+      font-size: 18px;
+    }
+  }
 }
 
 footer {
@@ -986,6 +991,32 @@ button#place_order,
         flex-basis: 50%;
       }
     }
+    &.discount {
+      width: 400px;
+      margin-left: 48%;
+      table {
+        font-size: 14px;
+        th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2;}
+        tr:hover {background-color: #ddd;}
+
+        th {
+          padding-top: 8px;
+          padding-bottom: 8px;
+          text-align: left;
+          background-color: #cab1a1;
+          color: white;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .entry-summary {
+    padding: 0 16px !important;
   }
   .mobile {
     display: none;
