@@ -2,12 +2,14 @@ $(document).ready(function () {
   $(document).click(function (e) {
     $target = $(e.target)
 
-    const clickOnNavbar = $target.closest('.navbar .fa-bars').length > 0;
+    const clickOnNavbar = $target.closest('.navbar .navbar-btn').length > 0;
     if (clickOnNavbar) {
       $('.navbar').toggleClass('show')
+      $('.navbar .navbar-btn').toggleClass('fa-bars fa-times')
       e.preventDefault()
     } else {
       $('.navbar').removeClass('show')
+      $('.navbar .navbar-btn').addClass('fa-bars').removeClass('fa-times')
     }
   })
 

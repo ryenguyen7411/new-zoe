@@ -33,11 +33,20 @@
           <a href="/"><img src="<?php echo get_assets_path('zoe')?>/media/logo.png" /></a>
         </div>
         <div class="navbar">
-          <i class="fa fa-bars"></i>
-          <ul>
+          <i class="navbar-btn fa fa-bars"></i>
+          <ul class="navbar-main">
             <li><a href="/">Home</a></li>
             <li><a href="<?php echo get_option('cart_url') ?>">Cart</a></li>
-            <li><a href="<?php echo get_option('faqs_url') ?>">Faqs</a></li>
+            <li><a href="<?php echo get_option('faqs_url') ?>">FAQs</a></li>
+
+            <ul class="navbar-sub">
+              <li><a href="<?php echo get_option('about_us_url') ?>">About Us</a></li>
+              <li><a href="<?php echo get_option('contact_us_url') ?>">Contact Us</a></li>
+              <li><a href="<?php echo get_option('faqs_url') ?>">FAQs</a></li>
+              <li><a href="<?php echo get_option('refund_url') ?>">Refund Policy</a></li>
+              <li><a href="<?php echo get_option('privacy_url') ?>">Privacy Policy</a></li>
+              <li><a href="<?php echo get_option('term_condition_url') ?>">Term & Condition</a></li>
+            </ul>
           </ul>
         </div>
       </div>

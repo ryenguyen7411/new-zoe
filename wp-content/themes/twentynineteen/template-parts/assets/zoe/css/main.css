@@ -11,8 +11,8 @@ body {
 header .header-wrapper {
   display: flex;
   justify-content: space-between;
-  height: 60px;
-  line-height: 60px;
+  height: 48px;
+  line-height: 48px;
 }
 
 header .header-wrapper .logo img {
@@ -32,6 +32,15 @@ header .header-wrapper .navbar > ul {
   list-style: none;
 }
 
+header .header-wrapper .navbar > ul > li a {
+  font-size: 16px;
+  color: #424242;
+}
+
+header .header-wrapper .navbar > ul .navbar-sub {
+  display: none;
+}
+
 header .header-wrapper .navbar i {
   visibility: hidden;
 }
@@ -44,7 +53,7 @@ header .header-wrapper .navbar a {
 
 header .header-wrapper .navbar a.active {
   color: #cab1a1;
-  font-style: 16px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -1056,33 +1065,65 @@ button#place_order:hover,
 }
 
 @media (max-width: 767px) {
+  header .header-wrapper {
+    padding-right: 0;
+  }
   header .header-wrapper .navbar {
     visibility: hidden;
-    width: 52px;
+    width: 48px;
+    z-index: 1;
+  }
+  header .header-wrapper .navbar:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #424242;
+    color: white;
   }
   header .header-wrapper .navbar > ul {
-    position: absolute;
+    position: fixed;
+    left: 0;
     right: 0;
-    top: calc(100% - 12px);
-    flex-direction: column;
+    top: 96px;
+    text-align: center;
     z-index: 1000;
-    background: white;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+  header .header-wrapper .navbar > ul.navbar-main {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header .header-wrapper .navbar > ul.navbar-main > li {
+    flex: 1;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  header .header-wrapper .navbar > ul .navbar-sub {
+    display: initial;
+    margin: 48px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid white;
+  }
+  header .header-wrapper .navbar > ul a {
+    color: white !important;
   }
   header .header-wrapper .navbar i {
     position: absolute;
-    right: -10px;
+    right: 0;
     visibility: visible;
     cursor: pointer;
-    padding: 20px;
+    padding: 12px 14px;
     font-size: 20px;
+    color: white;
+    background: #424242;
   }
   header .header-wrapper .navbar a {
     padding: 16px;
-    min-width: 150px;
   }
   header .header-wrapper .navbar.show {
-    flex-direction: column;
     visibility: visible;
   }
   section.banner {

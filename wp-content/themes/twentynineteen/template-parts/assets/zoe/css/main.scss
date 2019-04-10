@@ -12,8 +12,8 @@ header {
   .header-wrapper {
     display: flex;
     justify-content: space-between;
-    height: 60px;
-    line-height: 60px;
+    height: 48px;
+    line-height: 48px;
     .logo {
       img {
         height: 32px;
@@ -28,6 +28,15 @@ header {
         margin: 0;
         padding: 0;
         list-style: none;
+        > li {
+          a {
+            font-size: 16px;
+            color: #424242;
+          }
+        }
+        .navbar-sub {
+          display: none;
+        }
       }
       i {
         visibility: hidden;
@@ -38,7 +47,7 @@ header {
         line-height: 100%;
         &.active {
           color: #cab1a1;
-          font-style: 16px;
+          font-size: 16px;
           font-weight: bold;
         }
       }
@@ -912,34 +921,64 @@ button#place_order,
 
 @media (max-width: 767px) {
   header .header-wrapper {
+    padding-right: 0;
     .navbar {
       visibility: hidden;
-        width: 52px;
-        >ul {
-          position: absolute;
-          right: 0;
-          top: calc(100% - 12px);
-          flex-direction: column;
-          z-index: 1000;
-          background: white;
-          box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+      width: 48px;
+      z-index: 1;
+      &:before {
+        content: '';
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #424242;
+        color: white;
+      }
+      >ul {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 96px;
+        text-align: center;
+        z-index: 1000;
+        &.navbar-main {
+          flex-wrap: wrap;
+          justify-content: center;
+          >li {
+            flex: 1;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
         }
-        i {
-          position: absolute;
-          right: -10px;
-          visibility: visible;
-          cursor: pointer;
-          padding: 20px;
-          font-size: 20px;
+        .navbar-sub {
+          display: initial;
+          margin: 48px 0 0;
+          padding: 0;
+          list-style: none;
+          border-top: 2px solid white;
         }
         a {
-          padding: 16px;
-          min-width: 150px;
+          color: white !important;
         }
-        &.show {
-          flex-direction: column;
-          visibility: visible;
-        }
+      }
+      i {
+        position: absolute;
+        right: 0;
+        visibility: visible;
+        cursor: pointer;
+        padding: 12px 14px;
+        font-size: 20px;
+        color: white;
+        background: #424242;
+      }
+      a {
+        padding: 16px;
+      }
+      &.show {
+        visibility: visible;
+      }
     }
   }
   section {
