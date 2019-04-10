@@ -4,12 +4,18 @@ $(document).ready(function () {
 
     const clickOnNavbar = $target.closest('.navbar .navbar-btn').length > 0;
     if (clickOnNavbar) {
+      e.preventDefault()
       $('.navbar').toggleClass('show')
       $('.navbar .navbar-btn').toggleClass('fa-bars fa-times')
-      e.preventDefault()
     } else {
       $('.navbar').removeClass('show')
       $('.navbar .navbar-btn').addClass('fa-bars').removeClass('fa-times')
+    }
+
+    const clickOnPopupCart = $target.closest('.xoo-wsc-basket').length > 0;
+    if (clickOnPopupCart) {
+      e.preventDefault()
+      handleClickPopupCart();
     }
   })
 
@@ -40,6 +46,10 @@ $(document).ready(function () {
     $('.quantity >.fa-plus').click(function () { this.previousElementSibling.stepUp() })
 
     $('.woocommerce-cart-form > table').before('<h4 class="cart-title">Cart</h4>')
+
+    const $title = $('.entry-summary .product_title').clone().addClass('mobile')
+    $('.entry-summary .product_title').addClass('desktop')
+    $('.single-product .product').prepend($title)
 
     $('.return-to-shop').after(`<p class="return-to-homepage">
       <a class="button btn-primary" href="/">
@@ -106,5 +116,19 @@ $(document).ready(function () {
       this.previousElementSibling.stepUp()
       $selectQuantity.find('input[type=number]')[0].stepUp()
     })
+  }
+
+  function handleClickPopupCart() {
+    // const $products = $('.xoo-wsc-product');
+    // $products.each(function() {
+    //   const $price = $(this).children('.xoo-wsc-price')
+    //   if (!$price) return
+
+    //   const quantity = $(this).find('.xoo-wsc-price span').first()
+    //   const oldPrice = $(this).find('.xoo-wsc-price .old-price .amount').first()
+    //   const match = oldPrice.html().match(/<span class="woocommerce-Price-currencySymbol">[\s\S]+<\/span>[\s\S]+/)
+
+    //   // console.log('$PRICE', quantity, match)
+    // })
   }
 });

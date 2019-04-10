@@ -146,6 +146,25 @@ section {
     }
   }
   &.discount {
+    table {
+      font-size: 14px;
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      tr:nth-child(even){background-color: #f2f2f2;}
+      tr:hover {background-color: #ddd;}
+
+      th {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-align: left;
+        background-color: #cab1a1;
+        color: white;
+        font-size: 18px;
+      }
+    }
     h4 {
       font-size: 18px;
     }
@@ -389,6 +408,23 @@ footer {
     .onsale {
       display: none;
     }
+    .entry-title {
+      position: relative;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        width: 80px;
+        height: 3px;
+        background: #cab1a1;
+      }
+    }
     .woocommerce-product-gallery {
       img {
         width: 100%;
@@ -398,23 +434,6 @@ footer {
     .summary {
       margin: 0;
       max-width: unset;
-      .entry-title {
-        position: relative;
-        font-size: 20px;
-        text-transform: uppercase;
-        margin-bottom: 48px;
-        padding-bottom: 24px;
-        &:before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          margin: 0;
-          width: 80px;
-          height: 3px;
-          background: #cab1a1;
-        }
-      }
       .price {
         >del {
           font-size: 20px;
@@ -1011,9 +1030,9 @@ button#place_order,
     .product {
       flex-direction: column;
       text-align: center;
-      .summary .entry-title:before {
-        left: calc(50% - 40px) !important;
-      }
+    }
+    .entry-title:before {
+      left: calc(50% - 40px) !important;
     }
   }
   .desktop {
@@ -1032,27 +1051,8 @@ button#place_order,
       }
     }
     &.discount {
-      width: 400px;
       margin-left: 48%;
-      table {
-        font-size: 14px;
-        th, td {
-          border: 1px solid #ddd;
-          padding: 8px;
-        }
-
-        tr:nth-child(even){background-color: #f2f2f2;}
-        tr:hover {background-color: #ddd;}
-
-        th {
-          padding-top: 8px;
-          padding-bottom: 8px;
-          text-align: left;
-          background-color: #cab1a1;
-          color: white;
-          font-size: 18px;
-        }
-      }
+      width: 400px;
     }
   }
   .entry-summary {

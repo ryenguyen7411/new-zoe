@@ -163,6 +163,32 @@ section.page-content .wpforms-form {
   margin-top: 64px;
 }
 
+section.discount table {
+  font-size: 14px;
+}
+
+section.discount table th, section.discount table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+section.discount table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+section.discount table tr:hover {
+  background-color: #ddd;
+}
+
+section.discount table th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #cab1a1;
+  color: white;
+  font-size: 18px;
+}
+
 section.discount h4 {
   font-size: 18px;
 }
@@ -462,17 +488,7 @@ footer .partners img {
   display: none;
 }
 
-.woocommerce .product .woocommerce-product-gallery img {
-  width: 100%;
-  height: auto;
-}
-
-.woocommerce .product .summary {
-  margin: 0;
-  max-width: unset;
-}
-
-.woocommerce .product .summary .entry-title {
+.woocommerce .product .entry-title {
   position: relative;
   font-size: 20px;
   text-transform: uppercase;
@@ -480,7 +496,7 @@ footer .partners img {
   padding-bottom: 24px;
 }
 
-.woocommerce .product .summary .entry-title:before {
+.woocommerce .product .entry-title:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -489,6 +505,16 @@ footer .partners img {
   width: 80px;
   height: 3px;
   background: #cab1a1;
+}
+
+.woocommerce .product .woocommerce-product-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.woocommerce .product .summary {
+  margin: 0;
+  max-width: unset;
 }
 
 .woocommerce .product .summary .price > del {
@@ -1152,7 +1178,7 @@ button#place_order:hover,
     flex-direction: column;
     text-align: center;
   }
-  .woocommerce .product .summary .entry-title:before {
+  .woocommerce .entry-title:before {
     left: calc(50% - 40px) !important;
   }
   .desktop {
@@ -1168,29 +1194,8 @@ button#place_order:hover,
     flex-basis: 50%;
   }
   section.discount {
-    width: 400px;
     margin-left: 48%;
-  }
-  section.discount table {
-    font-size: 14px;
-  }
-  section.discount table th, section.discount table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  section.discount table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  section.discount table tr:hover {
-    background-color: #ddd;
-  }
-  section.discount table th {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    text-align: left;
-    background-color: #cab1a1;
-    color: white;
-    font-size: 18px;
+    width: 400px;
   }
   .entry-summary {
     padding: 0 16px !important;
