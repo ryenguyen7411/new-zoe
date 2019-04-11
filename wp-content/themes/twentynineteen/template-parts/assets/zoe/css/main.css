@@ -8,6 +8,10 @@ body {
   margin-right: auto !important;
 }
 
+.hide {
+  display: none;
+}
+
 header .header-wrapper {
   display: flex;
   justify-content: space-between;
@@ -915,6 +919,16 @@ footer .partners img {
   font-size: 24px;
 }
 
+.xoo-wsc-container .xoo-wsc-product .xoo-wsc-img-col {
+  width: 20%;
+}
+
+.xoo-wsc-container .xoo-wsc-product .xoo-wsc-sum-col {
+  margin: 0;
+  padding-left: 8px;
+  width: 80%;
+}
+
 .btn-primary,
 .wc-proceed-to-checkout > a,
 .coupon > button,
@@ -1084,10 +1098,6 @@ button#place_order:hover,
   .faqs-container .search-container {
     padding: 16px;
   }
-}
-
-.faqs-container .hide {
-  display: none;
 }
 
 @media (max-width: 767px) {

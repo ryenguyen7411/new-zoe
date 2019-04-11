@@ -1,3 +1,10 @@
+const DISCOUNT_TABLE = [
+  { min: 5, discount: 0.3 },
+  { min: 4, discount: 0.25 },
+  { min: 3, discount: 0.2 },
+  { min: 2, discount: 0.15 },
+]
+
 $(document).ready(function () {
   $(document).click(function (e) {
     $target = $(e.target)
@@ -11,15 +18,9 @@ $(document).ready(function () {
       $('.navbar').removeClass('show')
       $('.navbar .navbar-btn').addClass('fa-bars').removeClass('fa-times')
     }
-
-    const clickOnPopupCart = $target.closest('.xoo-wsc-basket').length > 0;
-    if (clickOnPopupCart) {
-      e.preventDefault()
-      handleClickPopupCart();
-    }
   })
 
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(window).scrollTop() >= ($('.entry-summary').offset().top + $('.entry-summary').height())) {
       $('.btn-scroll-top').addClass('show');
       $('.xoo-wsc-basket').removeClass('show');
@@ -31,9 +32,9 @@ $(document).ready(function () {
     }
   });
 
-  $('.btn-scroll-top').click(function() {
+  $('.btn-scroll-top').click(function () {
     var productListTop = $('.entry-summary').offset().top - 64
-    $('html, body').stop().animate({scrollTop: productListTop}, 500)
+    $('html, body').stop().animate({ scrollTop: productListTop }, 500)
   })
 
   function rearrange() {
@@ -104,7 +105,7 @@ $(document).ready(function () {
       .append($actionElem)
 
     const bothselects = $("table.variations select, .cart-fix-bottom select");
-    bothselects.change(function(e) {
+    bothselects.change(function (e) {
       bothselects.val(this.value);
     });
 
@@ -118,17 +119,39 @@ $(document).ready(function () {
     })
   }
 
-  function handleClickPopupCart() {
-    // const $products = $('.xoo-wsc-product');
-    // $products.each(function() {
-    //   const $price = $(this).children('.xoo-wsc-price')
-    //   if (!$price) return
+  // var mutationObserver = new MutationObserver(function(mutations) { handleUpdatePopupCart() });
+  // mutationObserver.observe($('.xoo-wsc-modal').get(0), { attributes: true, });
 
-    //   const quantity = $(this).find('.xoo-wsc-price span').first()
-    //   const oldPrice = $(this).find('.xoo-wsc-price .old-price .amount').first()
-    //   const match = oldPrice.html().match(/<span class="woocommerce-Price-currencySymbol">[\s\S]+<\/span>[\s\S]+/)
+  function handleUpdatePopupCart() {
+    const $products = $('.xoo-wsc-product');
 
-    //   // console.log('$PRICE', quantity, match)
-    // })
+    let productCount = 0;
+    $products.each(function () {
+      const quantity = $(this).find('.xoo-wsc-price span').first();
+      productCount += parseInt(quantity.html()) || 0
+    })
+    const discount = DISCOUNT_TABLE.find(d => d.min <= productCount);
+
+    $products.each(function () {
+      $(this).find('.xoo-wsc-price-updated').remove()
+      $(this).find('.xoo-wsc-price').addClass('hide')
+
+      const quantity = parseInt($(this).find('.xoo-wsc-price span').first().html()) || 0;
+      const priceElem = $(this).find('.xoo-wsc-price .old-price .amount').first()
+      const currency = priceElem.html().split('</span>')[0].split('<span class="woocommerce-Price-currencySymbol">').pop()
+
+      const oldPrice = parseFloat(priceElem.html().split('</span>')[1].replace(',', ''))
+      const newPrice = oldPrice - oldPrice * (DISCOUNT_TABLE[productCount] || 0)
+
+      const newPriceElem = $('<div class="xoo-wsc-price-updated">')
+        .append(`<p>Subtotal: ${currency}${oldPrice}</p>`)
+        .append(discount ? `<p>
+            ${discount.min} items discount applied:
+            - ${currency}${discount.discount * oldPrice}
+          </p>` : '')
+        .append(`<p>Total: ${currency}${newPrice}</p>`)
+
+      $(this).append(newPriceElem)
+    })
   }
 });
