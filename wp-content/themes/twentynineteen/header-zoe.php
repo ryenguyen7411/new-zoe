@@ -38,7 +38,6 @@
             <li><a href="/">Home</a></li>
             <li><a href="<?php echo get_option('cart_url') ?>">Cart</a></li>
             <li><a href="<?php echo get_option('faqs_url') ?>">FAQs</a></li>
-
             <ul class="navbar-sub">
               <li><a href="<?php echo get_option('about_us_url') ?>">About Us</a></li>
               <li><a href="<?php echo get_option('contact_us_url') ?>">Contact Us</a></li>
