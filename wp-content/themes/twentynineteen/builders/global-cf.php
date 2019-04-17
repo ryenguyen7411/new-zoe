@@ -20,7 +20,7 @@ function global_cf() {
       (object)['title' => 'Contact Us URL', 'field' => 'contact_us_url'],
       (object)['title' => 'Refund Policy URL', 'field' => 'refund_url'],
       (object)['title' => 'Privacy Policy URL', 'field' => 'privacy_url'],
-      (object)['title' => 'Term & Condition URL', 'field' => 'term_url'],
+      (object)['title' => 'Term & Condition URL', 'field' => 'term_condition_url'],
     ) ?>
 
     <?php foreach($global_cf as $var) { ?>
