@@ -1137,6 +1137,7 @@ button#place_order:hover,
     text-transform: uppercase;
   }
   header .header-wrapper .navbar > ul .navbar-sub {
+    flex-basis: 60%;
     display: initial;
     margin: 48px 0 0;
     padding: 0;
