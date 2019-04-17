@@ -16,7 +16,7 @@ get_header($template_slug);
   wp_reset_query(); //resetting the page query
   ?>
 
-    <?php echo do_shortcode('[wpforms id="106" title="false" description="false"]') ?>
+    <?php echo do_shortcode('[wpforms id="' .get_field('contact_form_id'). '" title="false" description="false"]') ?>
   </div>
 </section>
 
