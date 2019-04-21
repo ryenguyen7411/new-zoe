@@ -5,8 +5,8 @@
         "fields": [
             {
                 "key": "field_5cb6bf187b563",
-                "label": "ContactFormId",
-                "name": "contact_form_id",
+                "label": "Form Shortcode",
+                "name": "form_shortcode",
                 "type": "text",
                 "instructions": "",
                 "required": 1,
